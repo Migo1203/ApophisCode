@@ -1,0 +1,17 @@
+# 本地环境和常见凭据文件；忽略规则不能替代人工检查
+.env
+.env.*
+!.env.example
+.secrets/
+secrets/
+credentials.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# 本地临时资料及系统文件
+private/
+*.log
+.DS_Store
