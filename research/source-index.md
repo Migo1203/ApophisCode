@@ -1,13 +1,47 @@
 # 来源索引
 
-状态：初始化，仅记录负责人提供的入口，**未进行外部访问或核查**。本索引是来源登记处，不把登记本身视为证据核验。
+本次核查日期均为 **2026-10-29（北京时间）**。登记来源不等于认定来源主张为事实。官方资料用于其自身范围；第三方报告仅证明其报告内容，未独立复现。
 
-| 编号 | 来源或链接 | 类型 | 获取/查看时间 | 状态与适用范围 |
-| --- | --- | --- | --- | --- |
-| S-001 | [https://apophis.uk/](https://apophis.uk/) | 负责人提供的官网入口 | 负责人于 2026-10-29 提供；尚未访问 | 内容、功能、价格及访问状态待验证 |
+### S-001
+
+[ApophisCode 官网入口](https://apophis.uk/)；主体：负责人提供，运营主体待确认；发布日期不明。本环境通过代理访问首页返回 CONNECT 403；网页工具也无法打开首页、`https://www.apophis.uk/` 与 `/register`。未获网页内容，不能判断网站整体可用性或登录要求；域名归属及官网地址待确认。
+
+### S-002
+
+[apophis.uk 检测历史汇总](https://veridrop.org/leaderboard/www.apophis.uk?model=all&pos=3296&src=leaderboard)；主体：Veridrop；页面动态更新。页面称有 4 条公开报告、3 条有效样本；历史列表显示 2026-08-26 与 2026-09-17，另有不同日期范围文字；实际测试条件、独立性和产品域名归属未核验。仅作历史线索，不代表当前能力。
+
+### S-003
+
+[OpenAI 协议检测报告](https://veridrop.org/r/oUcrpsr_)；主体：Veridrop；测试时间参照 S-002 列表为 2026-08-26。页面描述针对 `www.apophis.uk` 某模型的 Chat Completions 检测，称基础请求通过、流式一致性异常，并称不能可靠鉴别模型真伪。未独立复现，不证明当前服务。
+
+### S-004
+
+[Claude 协议检测报告](https://veridrop.org/r/q8_JHsJp)；主体：Veridrop；测试时间参照 S-002 列表为 2026-09-17。报告称签名验证、Token 用量检查未通过，长上下文检测异常；具体测试条件及结论未独立验证，不推断故障原因或模型真实性。
+
+### S-005
+
+[Understanding and counting tokens](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens)；主体：OpenAI Help Center；页面显示更新于查看前 9 天。适用于 OpenAI 对其模型 Token 的说明；用来理解输入、输出、推理和切分，不证明 ApophisCode 的模型或用量。
+
+### S-006
+
+[API Pricing](https://developers.openai.com/api/docs/pricing)；主体：OpenAI；动态价格页，发布日期未标明。查看了按模型区分输入、输出和缓存等价格的结构；费用会变化，该页面不是 ApophisCode 价格。
+
+### S-007
+
+[Advanced Configuration](https://learn.chatgpt.com/docs/config-file/config-advanced)；主体：OpenAI / ChatGPT Learn；动态文档，未标发布日期。自定义 provider、Base URL、环境变量密钥的通用配置，未声明兼容 ApophisCode；具体客户端版本未标明。
+
+### S-008
+
+[Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference)；主体：OpenAI / ChatGPT Learn；动态文档，未标发布日期。配置参考中自定义 provider 的 `wire_api` 为 Responses；并不证明其他服务实现该协议，具体适用版本需核对。
+
+### S-009
+
+[Other LLM gateways](https://code.claude.com/docs/en/llm-gateway)；主体：Anthropic，Claude Code 文档；动态文档，未标发布日期。说明 Claude Code 经网关路由及身份认证；不证明 ApophisCode 接入或得到 Anthropic 授权，需核对具体版本及网关兼容性。
+
+### S-010
+
+[Model Provider Settings](https://docs.cherry-ai.com/cherry-studio-wen-dang/en-us/cherry-studio/preview/settings/providers)；主体：Cherry Studio 文档；发布日期、软件版本未标明，搜索索引显示约 1.4 年前抓取。搜索摘要提到 API Key；网页工具直接读取超时，无法核实完整内容和当前界面，不证明 ApophisCode 兼容。
 
 ## 后续登记规则
 
-- 每项已核查来源记录编号、原始链接或内部资料名称、发布主体、标题、发布日期或生效日期（如有）、实际查看日期、适用地区/版本和状态；同一资料更新后记录对应版本或重新核查日期。
-- 具体结论旁链接对应来源和编号。公开页面失效、不可访问、需登录、信息冲突或适用条件不明时，说明限制；无公开链接的内部资料使用脱敏名称，不伪造链接。
-- 平台规则和法律法规优先保留正式原文；价格、功能和宣传案例注明具体页面、时间及条件。仅记录必要摘录，避免复制敏感信息和不必要的完整内容。
+记录原始链接或可追溯脱敏资料名、主体、标题、发布日期或生效日期、实际查看日期和适用范围；信息过时、不可访问、需要登录或有冲突时保留限制。不要登记密钥及其他敏感信息。
